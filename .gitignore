@@ -101,6 +101,9 @@ ehthumbs.db
 # Folder config file
 Desktop.ini
 
+.DS_Store
+.gitattributes
+
 # Recycle Bin used on file shares
 $RECYCLE.BIN/
 @Kerne1bug
