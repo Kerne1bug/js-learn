@@ -17,3 +17,21 @@ getMaxSubSum([1, 2, 3]) == 6 //(берём все)
 getMaxSubSum([-1, -2, -3]) = 0
 //Попробуйте придумать быстрое решение: O(n2), а лучше за О(n) операций.
 
+function getMaxSubSum(arr) {
+    let maxSum = 0;
+    let partialSum = 0;
+
+    for (let item of arr) {
+        partialSum += item;
+        maxSum = Math.max(maxSum, partialSum);
+        if (partialSum < 0) partialSum = 0;
+    }
+    return maxSum;
+}
+
+getMaxSubSum([-1, 2, 3, -9]) == 5 //(сумма выделенных элементов)
+getMaxSubSum([2, -1, 2, 3, -9]) == 6
+getMaxSubSum([-1, 2, 3, -9, 11]) == 11
+getMaxSubSum([-2, -1, 1, 2]) == 3
+getMaxSubSum([100, -9, 2, -3, 5]) == 100
+getMaxSubSum([1, 2, 3]) == 6 //(берём все)
